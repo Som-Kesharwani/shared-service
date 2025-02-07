@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"flag"
 	"io"
 	"log"
 	"os"
@@ -27,6 +28,14 @@ var (
 	Error   *log.Logger
 	Warning *log.Logger
 )
+
+func init() {
+	logLevel := flag.Int("loglevel", 1, "an integer value (0-4)")
+	logfileName := flag.String("logfileName", "myLog.txt", "an integer value (0-4)")
+	//Parse parses the command-line flags from os.Args[1:]. Must be called after all flags are defined and before flags are accessed by the program.
+	flag.Parse()
+	SetLogLevel(Level(*logLevel), *logfileName)
+}
 
 func initLog(traceHandle io.Writer,
 	infoHandle io.Writer,

@@ -39,6 +39,8 @@ func DBInstance() *mongo.Client {
 }
 
 func OpenCollection(client *mongo.Client, collectionName string) *mongo.Collection {
+	logger.Info.Printf("Try Mongo DB Connection")
 	var collection *mongo.Collection = Client.Database("Test").Collection(collectionName)
+	logger.Info.Printf("Connection Successfull!!")
 	return collection
 }
