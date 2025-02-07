@@ -32,6 +32,7 @@ func DBInstance() *mongo.Client {
 
 	if err != nil {
 		logger.Error.Printf("Failed to ping DataBase. Error :%s", err)
+		return nil
 	}
 	logger.Info.Println("Connected Successfully to Database!!!")
 	return client

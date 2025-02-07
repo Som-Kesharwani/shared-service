@@ -4,6 +4,8 @@ go 1.23.2
 
 require go.mongodb.org/mongo-driver v1.17.2
 
+require github.com/Som-Kesharwani/shared-service v0.1.2
+
 require (
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/klauspost/compress v1.16.7 // indirect
